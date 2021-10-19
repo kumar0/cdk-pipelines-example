@@ -39,10 +39,10 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
         buildCommand: 'npm run build',
       }),
     });
-    //  // This is where we add the application stages
-    //  const preprod = new CdkpipelinesDemoStage(this, 'PreProd', {
-    //   env: { account: 'ACCOUNT-NUMBER', region: 'REGION' }
-    // });
+    // This is where we add the application stages
+    const preprod = new CdkpipelinesDemoStage(this, 'PreProd', {
+      // env: { account: 'ACCOUNT-NUMBER', region: 'REGION' }
+    });
 
     // // put validations for the stages
     // const preprodStage = pipeline.addApplicationStage(preprod);
