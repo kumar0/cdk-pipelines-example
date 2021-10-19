@@ -47,21 +47,25 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
     // // put validations for the stages
     const preprodStage = pipeline.addApplicationStage(preprod);
 
-    // preprodStage.addActions(new ShellScriptAction({
-    //   actionName: 'TestService',
-    //   useOutputs: {
-    //     // Get the stack Output from the Stage and make it available in
-    //     // the shell script as $ENDPOINT_URL.
-    //     ENDPOINT_URL: pipeline.stackOutput(preprod.urlOutput),
-    //   },
-    //   commands: [
-    //     // Use 'curl' to GET the given URL and fail if it returns an error
-    //     'curl -Ssf $ENDPOINT_URL',
-    //   ],
-    // }));
+    preprodStage.addActions(
+      new ShellScriptAction({
+        actionName: 'TestService',
+        useOutputs: {
+          // Get the stack Output from the Stage and make it available in
+          // the shell script as $ENDPOINT_URL.
+          ENDPOINT_URL: pipeline.stackOutput(preprod.urlOutput),
+        },
+        commands: [
+          // Use 'curl' to GET the given URL and fail if it returns an error
+          'curl -Ssf $ENDPOINT_URL',
+        ],
+      })
+    );
 
-    // pipeline.addApplicationStage(new CdkpipelinesDemoStage(this, 'Prod', {
-    //   env: { account: 'ACCOUNT-NUMBER', region: 'REGION' }
-    // }));
+    pipeline.addApplicationStage(
+      new CdkpipelinesDemoStage(this, 'Prod', {
+        // env: { account: 'ACCOUNT-NUMBER', region: 'REGION' },
+      })
+    );
   }
 }
