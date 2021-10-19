@@ -36,14 +36,13 @@ export class CdkpipelinesDemoStack extends Stack {
     );
     // The Lambda function that contains the functionality
     const handler = new lambda.Function(this, 'Lambda', {
-      functionName: ' HelloFunction',
+      functionName: 'HElloHarish',
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: 'handler.handler',
       code: lambda.Code.fromAsset(path.resolve(__dirname, 'lambda')),
     });
 
     // An API Gateway to make the Lambda web-accessible
-
     const gw = new apigw.LambdaRestApi(this, 'Gateway', {
       restApiName: 'API-NAME',
       // domainName: {
@@ -58,8 +57,8 @@ export class CdkpipelinesDemoStack extends Stack {
     //   recordName: 'myapi.skill-metrics.com', // www
     //   target: route53.RecordTarget.fromAlias(new targets.ApiGateway(gw)),
     // });
-    // this.urlOutput = new CfnOutput(this, 'Url', {
-    //   value: gw.url,
-    // });
+    this.urlOutput = new CfnOutput(this, 'Url', {
+      value: gw.url,
+    });
   }
 }
