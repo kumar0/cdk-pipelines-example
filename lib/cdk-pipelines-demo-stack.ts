@@ -42,22 +42,23 @@ export class CdkpipelinesDemoStack extends Stack {
     });
 
     // An API Gateway to make the Lambda web-accessible
+
     const gw = new apigw.LambdaRestApi(this, 'Gateway', {
       restApiName: 'API-NAME',
-      domainName: {
-        certificate: certificate,
-        domainName: 'myapi.skill-metrics.com',
-      },
+      // domainName: {
+      //   certificate: certificate,
+      //   domainName: 'myapi.skill-metrics.com',
+      // },
       description: 'Endpoint for a simple Lambda-powered web service',
       handler,
     });
-    new route53.ARecord(this, 'AliasRecord', {
-      zone: hostedZone,
-      recordName: 'myapi.skill-metrics.com', // www
-      target: route53.RecordTarget.fromAlias(new targets.ApiGateway(gw)),
-    });
-    this.urlOutput = new CfnOutput(this, 'Url', {
-      value: gw.url,
-    });
+    // new route53.ARecord(this, 'AliasRecord', {
+    //   zone: hostedZone,
+    //   recordName: 'myapi.skill-metrics.com', // www
+    //   target: route53.RecordTarget.fromAlias(new targets.ApiGateway(gw)),
+    // });
+    // this.urlOutput = new CfnOutput(this, 'Url', {
+    //   value: gw.url,
+    // });
   }
 }
