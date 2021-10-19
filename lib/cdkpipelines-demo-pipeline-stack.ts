@@ -45,7 +45,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
     });
 
     // // put validations for the stages
-    // const preprodStage = pipeline.addApplicationStage(preprod);
+    const preprodStage = pipeline.addApplicationStage(preprod);
 
     // preprodStage.addActions(new ShellScriptAction({
     //   actionName: 'TestService',
