@@ -90,7 +90,7 @@
     "@aws-cdk/core" "1.128.0"
     "constructs" "^3.3.69"
 
-"@aws-cdk/aws-certificatemanager@1.128.0":
+"@aws-cdk/aws-certificatemanager@^1.128.0", "@aws-cdk/aws-certificatemanager@1.128.0":
   "integrity" "sha512-0Lszl1/4EM/o7omLMkS9zRHzQzv5C3QiGT7kx8RzrR7Wjy+KwF/+ijJwEGY4vN8QoGZXrvLJR1CVd9ZQcepfZA=="
   "resolved" "https://registry.npmjs.org/@aws-cdk/aws-certificatemanager/-/aws-certificatemanager-1.128.0.tgz"
   "version" "1.128.0"
@@ -504,7 +504,7 @@
     "@aws-cdk/core" "1.128.0"
     "constructs" "^3.3.69"
 
-"@aws-cdk/aws-route53-targets@1.128.0":
+"@aws-cdk/aws-route53-targets@^1.128.0", "@aws-cdk/aws-route53-targets@1.128.0":
   "integrity" "sha512-shInVzPyOgmBJQqJ9AoDdMfFe9g/MBoyC/u/jSltgwCcbTjp1Bzz8YYMEuO4xDqsNl/bKcdFLbDt6E2oPX0oww=="
   "resolved" "https://registry.npmjs.org/@aws-cdk/aws-route53-targets/-/aws-route53-targets-1.128.0.tgz"
   "version" "1.128.0"
@@ -523,7 +523,7 @@
     "@aws-cdk/region-info" "1.128.0"
     "constructs" "^3.3.69"
 
-"@aws-cdk/aws-route53@1.128.0":
+"@aws-cdk/aws-route53@^1.128.0", "@aws-cdk/aws-route53@1.128.0":
   "integrity" "sha512-u6tG0f9EBPk2MassoVw06xg7mFNB3Lds2jeodNGPqaT+RxWgntl8SZAj9YbMMmkaxSIHvoYtin8Ig2ZI5dr93w=="
   "resolved" "https://registry.npmjs.org/@aws-cdk/aws-route53/-/aws-route53-1.128.0.tgz"
   "version" "1.128.0"
