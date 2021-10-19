@@ -36,6 +36,7 @@ export class CdkpipelinesDemoStack extends Stack {
     );
     // The Lambda function that contains the functionality
     const handler = new lambda.Function(this, 'Lambda', {
+      functionName: ' HelloFunction',
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: 'handler.handler',
       code: lambda.Code.fromAsset(path.resolve(__dirname, 'lambda')),
