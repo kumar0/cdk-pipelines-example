@@ -51,11 +51,11 @@ export class CdkpipelinesDemoStack extends Stack {
       description: 'Endpoint for a simple Lambda-powered web service',
       handler,
     });
-    // new route53.ARecord(this, 'AliasRecord', {
-    //   zone: hostedZone,
-    //   recordName: 'myapi.skill-metrics.com', // www
-    //   target: route53.RecordTarget.fromAlias(new targets.ApiGateway(gw)),
-    // });
+    new route53.ARecord(this, 'AliasRecord', {
+      zone: hostedZone,
+      recordName: 'myapi.skill-metrics.com', // www
+      target: route53.RecordTarget.fromAlias(new targets.ApiGateway(gw)),
+    });
     this.urlOutput = new CfnOutput(this, 'Url', {
       value: gw.url,
     });
