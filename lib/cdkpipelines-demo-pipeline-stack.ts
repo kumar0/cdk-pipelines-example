@@ -31,7 +31,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
       }),
 
       // How it will be built and synthesized
-      synthAction: SimpleSynthAction.standardNpmSynth({
+        synthAction: SimpleSynthAction.standardNpmSynth({
         sourceArtifact,
         cloudAssemblyArtifact,
 
